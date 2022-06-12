@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+    <!-- personal stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- script logic  -->
+    <script src="/scripts/script.js" defer></script>
+
+		<title>Tip calculator app</title>
+		</style>
+	</head>
+	<body>
+    <section id="head-section">
+      <header>
+        <img src="/images/logo.svg" alt="logo of app">
+      </header>
+    </section>
+   
+  <main>
+    <div id="area-width">
+        <div>
+          <section id="totalbill-section">
+            <div class="error">
+              <h2 class="section-headings">Rekening</h2> 
+              <span class="error-text">kan geen '0' zijn</span>
+            </div>
+            <input class="bill-input-field" type="number" name="bill-amount" placeholder="124.85" id="amount-value">
+          </section>
+
+          <section id="select-tip-section">
+            <h2 class="section-headings">Select Tip %</h2>
+            <div id="button-layout">
+              <button value="5"> 5% </button>
+              <button value="10"> 10% </button>
+              <button value="15"> 15% </button>
+              <button value="25"> 25% </button>
+              <button value="50"> 50% </button>
+              <input type="number" placeholder="Custom">
+            </div>
+          </section>
+        
+          <section id="total-persons-section">
+            <div class="error">
+              <h2 class="section-headings">Aantal personen</h2>
+              <span class="error-text">kan geen '0' zijn</span>
+            </div>
+            <input class="persons-input-field" type="number" name="persons" id="amount-persons" placeholder="1">
+          </section> 
+      </div>
+
+      <div>
+        <section id="tip-calculation-section">
+          <div class="calculation-layout">
+            <div class="tip-amount">
+              <div>
+                <h2 class="sub-heading">totaal tip</h2>
+                <p class="paragraph-text">/ persoon</p>
+              </div>
+              <div>
+                <p class="amount-value" id="total-tip">$4.27</p>
+              </div>  
+            </div>
+            <div class="total-bill">
+              <div>
+                <h2 class="sub-heading">Totaal</h2>
+                <p class="paragraph-text">/ persoon</p>
+              </div>
+              <div>
+                <p class="amount-value" id="bill-total">$32.79 </p>
+              </div>
+            
+            </div>
+            <div>
+              <button type="submit" id="button-calcu">bereken</button>
+            </div>
+        </div>
+        </section>
+      </div>
+    </div>
+  </main>
+      
+	</body>
+</html>

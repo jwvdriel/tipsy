@@ -1,0 +1,482 @@
+:root {
+	--primary_color: hsl(172, 67%, 45%);
+
+	--very_dark_cyan: hsl(183, 100%, 15%);
+	--dark_grayish_cyan: hsl(186, 14%, 43%);
+	--grayish_cyan: hsl(184, 14%, 56%);
+	--light_grayish_cyan: hsl(185, 41%, 84%);
+	--very_light_grayish_cyan: hsl(189, 41%, 97%);
+	--white: hsl(0, 0%, 100%);
+
+	--ff-space-mono: 'Space Mono', monospace;
+
+	--fontsize_form_inputs: 1.5rem;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: var(--ff-space-mono);
+	font-weight: 700;
+	background-color: var(--light_grayish_cyan);
+	margin: 0;
+	padding: 0;
+}
+
+/*! destkop style start here */
+@media screen and (min-width: 1440px) {
+	#head-section {
+		text-align: center;
+		margin: 7rem auto 5rem;
+	}
+
+	main {
+		background-color: var(--white);
+		border-radius: 2rem;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	#area-width {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: 29.25rem;
+	}
+
+	#totalbill-section,
+	#select-tip-section,
+	#total-persons-section {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	#totalbill-section {
+		padding-top: 0.5rem;
+		margin-bottom: 3.5rem;
+	}
+
+	.section-headings {
+		margin-bottom: 0.3rem;
+		margin-top: 2rem;
+		font-size: 1.1rem;
+		text-transform: capitalize;
+		color: var(--dark_grayish_cyan);
+	}
+
+	.bill-input-field,
+	.persons-input-field {
+		color: var(--very_dark_cyan);
+		font-family: var(--ff-space-mono);
+		font-size: var(--fontsize_form_inputs);
+		font-weight: 700;
+		text-align: right;
+		height: 2.2rem;
+		width: 95%;
+		padding-right: 0.8rem;
+		outline: none;
+		border: none;
+		border-radius: 0.5rem;
+	}
+
+	.bill-input-field::-webkit-inner-spin-button,
+	.bill-input-field::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	.persons-input-field::-webkit-inner-spin-button,
+	.persons-input-field::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	.bill-input-field:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	.persons-input-field:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	.bill-input-field {
+		background: url('/images/icon-dollar.svg') no-repeat 1.1rem
+			var(--very_light_grayish_cyan);
+	}
+
+	.persons-input-field {
+		background: url('/images/icon-person.svg') no-repeat 1.1rem
+			var(--very_light_grayish_cyan);
+	}
+
+	#button-layout {
+		display: grid;
+		grid-template-columns: 30% 30% 30%;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	#select-tip-section button {
+		height: 3rem;
+		font-family: var(--ff-space-mono);
+		font-size: var(--fontsize_form_inputs);
+		font-weight: 700;
+		border-radius: 8px;
+		border: none;
+		background-color: var(--very_dark_cyan);
+		color: var(--very_light_grayish_cyan);
+	}
+
+	#select-tip-section button:focus {
+		background-color: var(--primary_color);
+		color: var(--very_dark_cyan);
+		cursor: pointer;
+	}
+
+	#select-tip-section input {
+		background-color: var(--very_light_grayish_cyan);
+		color: var(--dark_grayish_cyan);
+		text-align: right;
+		padding-right: 1rem;
+		font-size: var(--fontsize_form_inputs);
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		border: none;
+		outline: none;
+	}
+
+	#select-tip-section input:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	#select-tip-section input::-webkit-inner-spin-button,
+	#select-tip-section input::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	#select-tip-section input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	#tip-calculation-section {
+		background-color: var(--very_dark_cyan);
+		border-radius: 1rem;
+		margin-top: 2rem;
+		padding-bottom: 1.5rem;
+		width: 95%;
+		height: 24rem;
+	}
+
+	span {
+		visibility: hidden;
+	}
+
+	.error {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.error-border {
+		border: 2px solid red;
+		border-radius: 0.5rem;
+		margin: -2px;
+	}
+
+	.error-text {
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		font-size: 0.8rem;
+		margin-right: 0.3rem;
+		color: red;
+		opacity: 0.7;
+	}
+
+	.calculation-layout {
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	.tip-amount {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-bottom: 2.7rem;
+		padding-top: 2.5rem;
+	}
+
+	.total-bill {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-top: 4rem;
+	}
+
+	.sub-heading {
+		margin: 0;
+		color: var(--white);
+		font-size: 1.1rem;
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+
+	.paragraph-text {
+		color: var(--grayish_cyan);
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		font-size: 0.8rem;
+		margin: 0;
+	}
+
+	.amount-value {
+		color: var(--primary_color);
+		text-align: right;
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	.calculation-layout button {
+		margin-top: 7.5rem;
+		height: 3rem;
+		width: 100%;
+		background-color: var(--dark_grayish_cyan);
+		font-size: 1.5rem;
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		color: var(--grayish_cyan);
+		text-transform: uppercase;
+		border: none;
+		border-radius: 0.5rem;
+	}
+
+	.calculation-layout button:hover {
+		background-color: var(--primary_color);
+		color: var(--very_dark_cyan);
+		cursor: pointer;
+	}
+}
+
+/*! mobile first */
+@media screen and (max-width: 375px) {
+	#head-section {
+		height: 15vh;
+		text-align: center;
+		padding: 1.5rem 0 0 0;
+	}
+
+	main {
+		background-color: var(--white);
+		border-radius: 2rem 2rem 0 0;
+	}
+
+	#area-width {
+		width: 90%;
+		margin: 0 auto;
+		padding-bottom: 2rem;
+	}
+
+	#totalbill-section,
+	#select-tip-section,
+	#total-persons-section {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#totalbill-section {
+		padding-top: 0.5rem;
+	}
+
+	.section-headings {
+		margin-bottom: 0.3rem;
+		margin-top: 2rem;
+		font-size: 1.1rem;
+		text-transform: capitalize;
+		color: var(--dark_grayish_cyan);
+	}
+
+	.bill-input-field,
+	.persons-input-field {
+		color: var(--very_dark_cyan);
+		font-family: var(--ff-space-mono);
+		font-size: var(--fontsize_form_inputs);
+		font-weight: 700;
+		text-align: right;
+		height: 2.2rem;
+		width: 95%;
+		padding-right: 0.8rem;
+		outline: none;
+		border: none;
+		border-radius: 0.5rem;
+	}
+
+	.bill-input-field:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	.persons-input-field:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	.bill-input-field {
+		background: url('/images/icon-dollar.svg') no-repeat 1.1rem
+			var(--very_light_grayish_cyan);
+	}
+
+	.persons-input-field {
+		background: url('/images/icon-person.svg') no-repeat 1.1rem
+			var(--very_light_grayish_cyan);
+	}
+
+	#select-tip-section button {
+		height: 3rem;
+		font-family: var(--ff-space-mono);
+		font-size: var(--fontsize_form_inputs);
+		font-weight: 700;
+		border-radius: 8px;
+		border: none;
+		background-color: var(--very_dark_cyan);
+		color: var(--very_light_grayish_cyan);
+	}
+
+	#select-tip-section button:focus {
+		background-color: var(--primary_color);
+		color: var(--very_dark_cyan);
+		cursor: pointer;
+	}
+
+	#select-tip-section input {
+		background-color: var(--very_light_grayish_cyan);
+		color: var(--dark_grayish_cyan);
+		text-align: right;
+		padding-right: 1rem;
+		font-size: var(--fontsize_form_inputs);
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		border: none;
+		outline: none;
+	}
+
+	#select-tip-section input:focus {
+		border: 2px solid var(--primary_color);
+		border-radius: 0.5rem;
+		cursor: pointer;
+		margin: -2px;
+	}
+
+	#button-layout {
+		display: grid;
+		grid-template-columns: 1fr 50%;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	.error {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.error-text {
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		font-size: 0.7rem;
+		margin-right: 0.3rem;
+		color: red;
+		opacity: 0.7;
+	}
+
+	#tip-calculation-section {
+		background-color: var(--very_dark_cyan);
+		border-radius: 1rem;
+		margin-top: 2rem;
+		padding-bottom: 1.5rem;
+	}
+
+	.calculation-layout {
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	.tip-amount {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-bottom: 1.5rem;
+		padding-top: 2rem;
+	}
+
+	.total-bill {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	.sub-heading {
+		margin: 0;
+		color: var(--white);
+		font-size: 1.1rem;
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+
+	.paragraph-text {
+		color: var(--grayish_cyan);
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		font-size: 0.8rem;
+		margin: 0;
+	}
+
+	.amount-value {
+		color: var(--primary_color);
+		text-align: right;
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	.calculation-layout button {
+		margin-top: 1rem;
+		height: 3rem;
+		width: 100%;
+		background-color: var(--dark_grayish_cyan);
+		font-size: 1.5rem;
+		font-family: var(--ff-space-mono);
+		font-weight: 700;
+		color: var(--grayish_cyan);
+		text-transform: uppercase;
+		border: none;
+		border-radius: 0.5rem;
+	}
+
+	.calculation-layout button:hover {
+		background-color: var(--primary_color);
+		color: var(--very_dark_cyan);
+		cursor: pointer;
+	}
+}
